@@ -5,7 +5,7 @@ This repo contains code for telegram bot for music management.
 
 Bot name `@gotubemusicbot` or http://t.me/gotubemusicbot
 
-###How to start
+### How to start
 
 You need `docker` and `docker-compose` to be installed
 
