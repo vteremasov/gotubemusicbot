@@ -23,6 +23,12 @@ func GetYoutubeID(url string) string {
 	return r.FindAllStringSubmatch(url, -1)[0][1]
 }
 
+func IsYoutubeLink(str string) bool {
+	r := regexp.MustCompile(youtubeURLRegex)
+
+	return r.MatchString(str)
+}
+
 func DownloadMp3(info ytdl.VideoInfo, dest string) string {
 	if dest == "" {
 		dest = "."
