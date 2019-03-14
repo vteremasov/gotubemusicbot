@@ -12,7 +12,7 @@ import (
 	"reflect"
 )
 
-func TelegramBot() {
+func Bot() {
 
 	bot, err := tgbotapi.NewBotAPI(os.Getenv("TOKEN"))
 	if err != nil {
@@ -101,12 +101,13 @@ func TelegramBot() {
 					log.Panic(err)
 				}
 
+				// TODO: Save file info to db
+
 				fmt.Println(name)
 
 				if os.Getenv("DB_SWITCH") == "on" {
 
 					if err := storage.CollectData(update.Message.Chat.UserName, update.Message.Chat.ID, update.Message.Text); err != nil {
-						//Отправлем сообщение
 						msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Database error, but bot still working.")
 						bot.Send(msg)
 					}
