@@ -11,4 +11,4 @@ You need `docker` and `docker-compose` to be installed
 
 1. `cp docker-compose.yml-template docker-compose.yml`
 Open docker-compose.yml and set up telegram api token
-2. `./start.sh`
+2. `bash -x start.sh`
